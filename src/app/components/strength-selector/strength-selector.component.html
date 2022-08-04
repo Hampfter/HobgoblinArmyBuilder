@@ -1,0 +1,16 @@
+<p-dropdown styleClass="w-100" placeholder="Select a strength" [options]="strength" [(ngModel)]="selectedStrength" optionLabel="name" (onChange)="strengthSelected()" [showClear]="true">
+
+  <ng-template pTemplate="selectedItem">
+    <div class="d-flex flex-row justify-content-between w-100">
+      <div>{{selectedStrength.name}}</div>
+      <div>({{selectedStrength.cost}})</div>
+    </div>
+  </ng-template>
+  <ng-template let-strength pTemplate="item">
+    <div class="d-flex flex-row justify-content-between w-100">
+      <div>{{strength.name}}</div>
+      <div>({{strength.cost}})</div>
+    </div>
+  </ng-template>
+
+</p-dropdown>

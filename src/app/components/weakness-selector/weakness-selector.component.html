@@ -1,0 +1,16 @@
+<p-dropdown styleClass="w-100" placeholder="Select a weakness" [options]="weakness" [(ngModel)]="selectedweakness" optionLabel="name" (onChange)="weaknessSelected()">
+
+  <ng-template pTemplate="selectedItem">
+    <div class="d-flex flex-row justify-content-between w-100">
+      <div>{{selectedweakness.name}}</div>
+      <div>({{selectedweakness.cost}})</div>
+    </div>
+  </ng-template>
+  <ng-template let-weakness pTemplate="item">
+    <div class="d-flex flex-row justify-content-between w-100">
+      <div>{{weakness.name}}</div>
+      <div>({{weakness.cost}})</div>
+    </div>
+  </ng-template>
+
+</p-dropdown>

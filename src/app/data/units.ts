@@ -1,0 +1,122 @@
+export const units = [
+  {
+    "name": "Infantry",
+    "move": 8,
+    "attackRange": 0,
+    "footprint": "standard",
+    "defaultStrength": [],
+    "defaultWeakness": [],
+    "strength": [],
+    "weakness": [],
+    "cost": 250,
+    "costMultiplier": 1
+  },
+  {
+    "name": "Missile Troops",
+    "move": 8,
+    "attackRange": 24,
+    "footprint": "standard",
+    "defaultStrength": [],
+    "defaultWeakness": [],
+    "strength": [],
+    "weakness": [],
+    "cost": 200,
+    "costMultiplier": 1
+  },
+  {
+    "name": "Foot Knights",
+    "move": 8,
+    "attackRange": 0,
+    "footprint": "standard",
+    "defaultStrength": [],
+    "defaultWeakness": [],
+    "strength": [],
+    "weakness": [],
+    "cost": 400,
+    "costMultiplier": 2
+  },
+  {
+    "name": "Monstrous Infantry",
+    "move": 10,
+    "attackRange": 0,
+    "footprint": "standard",
+    "defaultStrength": [],
+    "defaultWeakness": [],
+    "strength": [],
+    "weakness": [],
+    "cost": 450,
+    "costMultiplier": 2
+  },
+  {
+    "name": "Light Cavalry",
+    "move": 12,
+    "attackRange": 6,
+    "footprint": "standard",
+    "defaultStrength": ["Nimble"],
+    "defaultWeakness": [],
+    "strength": [],
+    "weakness": [],
+    "cost": 250,
+    "costMultiplier": 1
+  },
+  {
+    "name": "Heavy Cavalry",
+    "move": 8,
+    "attackRange": 0,
+    "footprint": "standard",
+    "defaultStrength": ["Devastating Charge"],
+    "defaultWeakness": [],
+    "strength": [],
+    "weakness": [],
+    "cost": 500,
+    "costMultiplier": 2
+  },
+  {
+    "name": "Monster",
+    "move": 8,
+    "attackRange": 0,
+    "footprint": "standard",
+    "defaultStrength": ["Large"],
+    "defaultWeakness": [],
+    "strength": [],
+    "weakness": [],
+    "cost": 700,
+    "costMultiplier": 2
+  },
+  {
+    "name": "Chariot",
+    "move": 8,
+    "attackRange": 0,
+    "footprint": "standard",
+    "defaultStrength": ["Devastating Charge"],
+    "defaultWeakness": ["Fragile (5)"],
+    "strength": [],
+    "weakness": [],
+    "cost": 250,
+    "costMultiplier": 1
+  },
+  {
+    "name": "Beasts",
+    "move": 8,
+    "attackRange": 0,
+    "footprint": "standard",
+    "defaultStrength": [],
+    "defaultWeakness": [],
+    "strength": [],
+    "weakness": [],
+    "cost": 200,
+    "costMultiplier": 1
+  },
+  {
+    "name": "Artillery",
+    "move": 8,
+    "attackRange": 0,
+    "footprint": "standard",
+    "defaultStrength": [],
+    "defaultWeakness": ["Fragile (5)"],
+    "strength": [],
+    "weakness": [],
+    "cost": 250,
+    "costMultiplier": 1
+  }
+]
