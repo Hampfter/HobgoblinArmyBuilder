@@ -21,7 +21,7 @@ export class AppComponent {
   getTotalUnitCost(unit: any) {
     let totalCost = unit.cost;
 
-    unit.strength.forEach((strength: { name: string, cost: number, ignoreMultiplier: boolean }) => {
+    unit.strength.filter((s: Strength) => s).forEach((strength: { name: string, cost: number, ignoreMultiplier: boolean }) => {
       if (!strength.ignoreMultiplier) {
         totalCost += (Number(strength.cost) * unit.costMultiplier);
       }
@@ -30,7 +30,7 @@ export class AppComponent {
       }
     });
 
-    unit.weakness.forEach((weakness: { name: string, cost: number, ignoreMultiplier: boolean }) => {
+    unit.weakness.filter((w: Weakness) => w).forEach((weakness: { name: string, cost: number, ignoreMultiplier: boolean }) => {
       if (!weakness.ignoreMultiplier) {
         totalCost -= (Number(weakness.cost) * unit.costMultiplier);
       }
