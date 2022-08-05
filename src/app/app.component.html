@@ -4,9 +4,15 @@
 </div>
 
 <p-table [value]="army.units" responsiveLayout="scroll">
-  <!-- <ng-template pTemplate="caption">
-    <h4>{{army.name}}</h4>
-  </ng-template> -->
+  <ng-template pTemplate="caption">
+    <!-- <h4>{{army.name}}</h4> -->
+
+    <div class="field-checkbox">
+      <p-checkbox [(ngModel)]="showKeywordDescriptions" [binary]="true" inputId="showDesc"></p-checkbox>
+      <label for="showDesc">Show Keyword descriptions</label>
+    </div>
+
+  </ng-template>
   <ng-template pTemplate="header">
     <tr>
       <th style="width: 20rem;">Name</th>
@@ -28,7 +34,7 @@
         <ul class="list-group">
           <li class="list-group-item" style="max-width: 35rem" *ngFor="let s of unit.strength">
             <div>{{s.name}}</div>
-            <small >{{s.description}}</small>
+            <small *ngIf="showKeywordDescriptions">{{s.description}}</small>
           </li>
         </ul>
       </td>
@@ -36,7 +42,7 @@
         <ul class="list-group">
           <li class="list-group-item" *ngFor="let w of unit.weakness">
             <div>{{w.name}}</div>
-            <small>{{w.description}}</small>
+            <small *ngIf="showKeywordDescriptions">{{w.description}}</small>
           </li>
         </ul>
       </td>

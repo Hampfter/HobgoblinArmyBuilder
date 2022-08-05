@@ -9,6 +9,7 @@ import { Weakness } from './models/Weakness';
 })
 export class AppComponent {
   title = 'HobgoblinArmyBuilder';
+  showKeywordDescriptions: boolean = false;
 
   army: { units: Unit[], name: string } = { units: [], name: 'Hobgoblin Army' };
 
