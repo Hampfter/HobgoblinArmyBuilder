@@ -29,7 +29,12 @@
       <div *ngIf="selectedUnit?.defaultStrength?.length > 0">
         <b>Default strength</b>
         <br>
-        {{selectedUnit.defaultStrength}}
+        <ul class="list-group">
+          <li class="list-group-item" style="max-width: 35rem" *ngFor="let s of selectedUnit.defaultStrength">
+            <div>{{s.name}}</div>
+            <small >{{s.description}}</small>
+          </li>
+        </ul>
       </div>
 
 
@@ -44,7 +49,12 @@
       <div *ngIf="selectedUnit?.defaultWeakness?.length > 0">
         <b>Default weakness</b>
         <br>
-        {{selectedUnit.defaultWeakness}}
+        <ul class="list-group">
+          <li class="list-group-item" style="max-width: 35rem" *ngFor="let s of selectedUnit.defaultWeakness">
+            <div>{{s.name}}</div>
+            <small >{{s.description}}</small>
+          </li>
+        </ul>
       </div>
     </div>
     <div class="col-2">

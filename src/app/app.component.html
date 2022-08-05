@@ -27,19 +27,37 @@
   </ng-template>
   <ng-template pTemplate="header">
     <tr>
-      <th>Name</th>
-      <th>Strength</th>
-      <th>Weakness</th>
+      <th style="width: 20rem;">Name</th>
+      <th style="width: 35rem;">Strength</th>
+      <th style="width: 35rem;">Weakness</th>
       <th>Cost</th>
+      <th></th>
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-unit>
     <tr>
-      <td> {{unit.name}} </td>
-      <td> {{concatNames(unit.strength)}} </td>
-      <td> {{concatNames(unit.weakness)}} </td>
+      <td style="width: 20rem;">{{unit.name}} </td>
+      <td style="width: 35rem;">
+        <ul class="list-group">
+          <li class="list-group-item" style="max-width: 35rem" *ngFor="let s of unit.strength">
+            <div>{{s.name}}</div>
+            <small >{{s.description}}</small>
+          </li>
+        </ul>
+      </td>
+      <td style="width: 35rem;">
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let w of unit.weakness">
+            <div>{{w.name}}</div>
+            <small>{{w.description}}</small>
+          </li>
+        </ul>
+      </td>
       <td>
         {{getTotalUnitCost(unit)}}
+      </td>
+      <td>
+        <p-button icon="pi pi-trash" (onClick)="removeUnit(unit)"></p-button>
       </td>
     </tr>
   </ng-template>

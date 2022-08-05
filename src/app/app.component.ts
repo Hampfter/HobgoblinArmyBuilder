@@ -13,6 +13,8 @@ export class AppComponent {
   army: { units: Unit[], name: string } = { units: [], name: 'Hobgoblin Army' };
 
   addUnit(unit: any) {
+    unit.strength = unit.defaultStrength.concat(unit.strength);
+    unit.weakness = unit.defaultWeakness.concat(unit.weakness);
     this.army.units.push(unit);
   }
 
@@ -52,5 +54,9 @@ export class AppComponent {
     });
 
     return totalCost;
+  }
+
+  removeUnit(unit: Unit) {
+    this.army.units = this.army.units.filter((u: Unit) => u !== unit);
   }
 }

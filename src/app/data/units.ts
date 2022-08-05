@@ -52,7 +52,14 @@ export const units = [
     "move": 12,
     "attackRange": 6,
     "footprint": "standard",
-    "defaultStrength": ["Nimble"],
+    "defaultStrength": [
+      {
+        "name": "Nimble",
+        "cost": 0,
+        "ignoreMultiplier": true,
+        "description": "This unit may reform for 2 movement points."
+      }
+    ],
     "defaultWeakness": [],
     "strength": [],
     "weakness": [],
@@ -64,7 +71,14 @@ export const units = [
     "move": 8,
     "attackRange": 0,
     "footprint": "standard",
-    "defaultStrength": ["Devastating Charge"],
+    "defaultStrength": [
+      {
+        "name": "Devastating Charge",
+        "cost": 0,
+        "ignoreMultiplier": true,
+        "description": "While this unit has the Charged strength, it may decrease its target number by one, to a minimum of 2, when attacking in close combat."
+      }
+    ],
     "defaultWeakness": [],
     "strength": [],
     "weakness": [],
@@ -76,7 +90,14 @@ export const units = [
     "move": 8,
     "attackRange": 0,
     "footprint": "standard",
-    "defaultStrength": ["Large"],
+    "defaultStrength": [
+      {
+        "name": "Large",
+        "cost": 0,
+        "ignoreMultiplier": true,
+        "description": "When drawing line of sight from or to this unit, ignore other units unless they too are Large ."
+      }
+    ],
     "defaultWeakness": [],
     "strength": [],
     "weakness": [],
@@ -88,8 +109,22 @@ export const units = [
     "move": 8,
     "attackRange": 0,
     "footprint": "standard",
-    "defaultStrength": ["Devastating Charge"],
-    "defaultWeakness": ["Fragile (5)"],
+    "defaultStrength": [
+      {
+        "name": "Devastating Charge",
+        "cost": 0,
+        "ignoreMultiplier": true,
+        "description": "While this unit has the Charged strength, it may decrease its target number by one, to a minimum of 2, when attacking in close combat."
+      }
+    ],
+    "defaultWeakness": [
+      {
+        "name": "Fragile (5)",
+        "cost": 0,
+        "ignoreMultiplier": true,
+        "description": "Decrease this unit’s break point by 5."
+      }
+    ],
     "strength": [],
     "weakness": [],
     "cost": 250,
@@ -113,7 +148,14 @@ export const units = [
     "attackRange": 0,
     "footprint": "standard",
     "defaultStrength": [],
-    "defaultWeakness": ["Fragile (5)"],
+    "defaultWeakness": [
+      {
+        "name": "Fragile (5)",
+        "cost": 0,
+        "ignoreMultiplier": true,
+        "description": "Decrease this unit’s break point by 5."
+      }
+    ],
     "strength": [],
     "weakness": [],
     "cost": 250,
