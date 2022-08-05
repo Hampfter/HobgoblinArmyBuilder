@@ -1,6 +1,6 @@
 <div class="p-4" style="border: 1px solid lightgrey;">
   <div class="row">
-    <div class="col-4 col-md-4 col-sm-12">
+    <div class="col-4 col-md-4 col-sm-12 pt-4">
       <p-dropdown styleClass="w-100" placeholder="Select a Unit" [options]="units" [(ngModel)]="selectedUnit"
         optionLabel="name" (onChange)="unitSelected()">
         <ng-template pTemplate="selectedItem">
@@ -19,28 +19,35 @@
         </ng-template>
       </p-dropdown>
 
-      <div class="d-flex flex-column">
-        <div class="field-checkbox" *ngIf="generalEnabled">
-          <p-checkbox [disabled]="!generalEnabled" [(ngModel)]="isGeneral" [binary]="true" inputId="general"></p-checkbox>
-          <label for="general">General</label>
+      <div class="d-flex flex-column" *ngIf="selectedUnit">
+        <div class="my-2">
+          <div class="field-checkbox" *ngIf="generalEnabled">
+            <p-checkbox [disabled]="!generalEnabled" [(ngModel)]="isGeneral" [binary]="true" inputId="general">
+            </p-checkbox>
+            <label for="general" class="ms-2">General</label>
+          </div>
+          <small *ngIf="!generalEnabled">A General is already selected.</small>
         </div>
-        <small *ngIf="!generalEnabled">A General is already selected.</small>
 
-        <div class="field-checkbox" *ngIf="battleStandardEnabled">
-          <p-checkbox [disabled]="!battleStandardEnabled" [(ngModel)]="hasBattleStandard" [binary]="true" inputId="bs"></p-checkbox>
-          <label for="bs">Battle Standard</label>
+        <div class="my-2">
+          <div class="field-checkbox" *ngIf="battleStandardEnabled">
+            <p-checkbox [disabled]="!battleStandardEnabled" [(ngModel)]="hasBattleStandard" [binary]="true"
+              inputId="bs"></p-checkbox>
+            <label for="bs" class="ms-2">Battle Standard</label>
+          </div>
+          <small *ngIf="!battleStandardEnabled">Your Batte Standard is already assigned.</small>
         </div>
-        <small *ngIf="!battleStandardEnabled">Your Batte Standard is already assigned.</small>
+
       </div>
 
     </div>
     <div class="col-3 col-md-3 col-sm-12 pt-4">
       <div class="d-flex flex-column" *ngIf="selectedUnit?.name">
-        <app-strength-selector [disabledStrength]="selectedUnit.strength"
+        <app-strength-selector class="my-1" [disabledStrength]="selectedUnit.strength"
           [(selectedStrength)]="selectedUnit.strength[0]"></app-strength-selector>
-        <app-strength-selector [disabledStrength]="selectedUnit.strength"
+        <app-strength-selector class="my-1" [disabledStrength]="selectedUnit.strength"
           [(selectedStrength)]="selectedUnit.strength[1]"></app-strength-selector>
-        <app-strength-selector [disabledStrength]="selectedUnit.strength"
+        <app-strength-selector class="my-1" [disabledStrength]="selectedUnit.strength"
           [(selectedStrength)]="selectedUnit.strength[2]"></app-strength-selector>
       </div>
 
@@ -59,8 +66,10 @@
     </div>
     <div class="col-3 col-md-3 col-sm-12 pt-4">
       <div class="d-flex flex-column" *ngIf="selectedUnit?.name">
-        <app-weakness-selector [disabledWeakness]="selectedUnit.weakness" [(selectedweakness)]="selectedUnit.weakness[0]"></app-weakness-selector>
-        <app-weakness-selector [disabledWeakness]="selectedUnit.weakness" [(selectedweakness)]="selectedUnit.weakness[1]"></app-weakness-selector>
+        <app-weakness-selector class="my-1" [disabledWeakness]="selectedUnit.weakness"
+          [(selectedweakness)]="selectedUnit.weakness[0]"></app-weakness-selector>
+        <app-weakness-selector class="my-1" [disabledWeakness]="selectedUnit.weakness"
+          [(selectedweakness)]="selectedUnit.weakness[1]"></app-weakness-selector>
       </div>
       <div *ngIf="selectedUnit?.defaultWeakness?.length > 0">
         <b>Default weakness</b>
