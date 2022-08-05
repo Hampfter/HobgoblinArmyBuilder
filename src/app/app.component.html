@@ -3,7 +3,7 @@
   <h5>Hobgoblin Army Builder</h5>
 </div>
 
-<p-table [value]="army.units" responsiveLayout="scroll">
+<p-table [value]="army.units" responsiveLayout="scroll" responsiveLayout="stack" >
   <ng-template pTemplate="caption">
     <!-- <h4>{{army.name}}</h4> -->
 
@@ -25,6 +25,7 @@
   <ng-template pTemplate="body" let-unit>
     <tr>
       <td style="width: 20rem;">
+        <span class="p-column-title">Name</span>
         <div class="fs-2">{{unit.name}}</div>
         <div class="ms-2">Cost multiplier: x{{unit.costMultiplier}}</div>
         <div class="ms-2" *ngIf="unit.isGeneral"><b>General</b></div>
@@ -32,6 +33,7 @@
 
       </td>
       <td style="width: 35rem;">
+        <span class="p-column-title">Strength</span>
         <ul class="list-group">
           <li class="list-group-item" style="max-width: 35rem" *ngFor="let s of unit.strength; let i = index">
             <app-strength-selector [disabledStrength]="unit.strength" [(selectedStrength)]="unit.strength[i]">
@@ -46,6 +48,7 @@
         </ul>
       </td>
       <td style="width: 35rem;">
+        <span class="p-column-title">Weakness</span>
         <ul class="list-group">
           <li class="list-group-item" *ngFor="let w of unit.weakness; let i = index">
             <app-weakness-selector [(selectedweakness)]="unit.weakness[i]"></app-weakness-selector>
@@ -59,9 +62,11 @@
         </ul>
       </td>
       <td>
+        <span class="p-column-title">Unit cost</span>
         {{getTotalUnitCost(unit)}}
       </td>
       <td>
+        <span class="p-column-title">Remove</span>
         <p-button icon="pi pi-trash" (onClick)="removeUnit(unit)"></p-button>
       </td>
     </tr>
