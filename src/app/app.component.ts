@@ -59,4 +59,12 @@ export class AppComponent {
   removeUnit(unit: Unit) {
     this.army.units = this.army.units.filter((u: Unit) => u !== unit);
   }
+
+  battleStandardAssigned(): boolean {
+    return this.army.units.find(u => u.hasBattleStandard) !== undefined;
+  }
+
+  generalAssigned(): boolean {
+    return this.army.units.find(u => u.isGeneral) !== undefined;
+  }
 }

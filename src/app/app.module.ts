@@ -6,6 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DropdownModule } from 'primeng/dropdown';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
+import { CheckboxModule } from 'primeng/checkbox';
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -29,7 +31,8 @@ import { WeaknessSelectorComponent } from './components/weakness-selector/weakne
     FormsModule,
     DropdownModule,
     TableModule,
-    ButtonModule
+    ButtonModule,
+    CheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

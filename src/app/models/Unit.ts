@@ -12,4 +12,6 @@ export interface Unit{
   weakness: Weakness[];
   cost?: number;
   costMultiplier?: number;
+  isGeneral?: boolean;
+  hasBattleStandard?: boolean;
 }

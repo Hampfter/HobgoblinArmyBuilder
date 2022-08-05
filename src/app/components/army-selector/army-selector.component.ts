@@ -12,7 +12,13 @@ export class ArmySelectorComponent implements OnInit {
   @Output() selectedUnitChange = new EventEmitter<any>();
   @Output() onAddUnit = new EventEmitter<any>();
 
+  @Input() generalEnabled: boolean = true;
+  @Input() battleStandardEnabled: boolean = true;
+
   units: any[] = units;
+
+  isGeneral: boolean = false;
+  hasBattleStandard: boolean = false;
 
   constructor() { }
 
@@ -52,12 +58,17 @@ export class ArmySelectorComponent implements OnInit {
   }
 
   addUnit() {
-
     this.selectedUnit.weakness = this.selectedUnit.weakness.filter((weakness: any) => weakness);
     this.selectedUnit.strength = this.selectedUnit.strength.filter((strength: any) => strength);
 
-    this.onAddUnit.emit({...this.selectedUnit});
+    this.onAddUnit.emit({
+      ...this.selectedUnit,
+      isGeneral: this.isGeneral,
+      hasBattleStandard: this.hasBattleStandard
+    });
     this.selectedUnit = null;
+    this.isGeneral = false;
+    this.hasBattleStandard = false;
   }
 
 }

@@ -18,7 +18,12 @@
   </ng-template>
   <ng-template pTemplate="body" let-unit>
     <tr>
-      <td style="width: 20rem;">{{unit.name}} </td>
+      <td style="width: 20rem;">
+        <div class="fs-2">{{unit.name}}</div>
+        <div class="ms-2" *ngIf="unit.isGeneral"><b>General</b></div>
+        <div class="ms-2" *ngIf="unit.hasBattleStandard"><b>Battle Standard</b></div>
+
+       </td>
       <td style="width: 35rem;">
         <ul class="list-group">
           <li class="list-group-item" style="max-width: 35rem" *ngFor="let s of unit.strength">
@@ -51,7 +56,7 @@
 
 
 <div class="m-2">
-  <app-army-selector (onAddUnit)="addUnit($event)"></app-army-selector>
+  <app-army-selector [generalEnabled]="!generalAssigned()" [battleStandardEnabled]="!battleStandardAssigned()" (onAddUnit)="addUnit($event)"></app-army-selector>
 </div>
 
 <router-outlet></router-outlet>
