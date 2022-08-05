@@ -1,30 +1,12 @@
-<!-- <table>
-  <thead>
-    <tr>
-      <th> Name </th>
-      <th> Strength </th>
-      <th> Weakness </th>
-      <th> Cost </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let unit of army.units">
-      <td> {{unit.name}} </td>
-      <td> {{concatNames(unit.strength)}} </td>
-      <td> {{concatNames(unit.weakness)}} </td>
-      <td>
-        {{getTotalUnitCost(unit)}}
-      </td>
-    </tr>
-  </tbody>
-</table> -->
-
-
+<div class="d-flex flex-row align-items-center">
+  <img class="ms-4" height="60"  src="../assets/Logo.png" alt="">
+  <h5>Hobgoblin Army Builder</h5>
+</div>
 
 <p-table [value]="army.units" responsiveLayout="scroll">
-  <ng-template pTemplate="caption">
+  <!-- <ng-template pTemplate="caption">
     <h4>{{army.name}}</h4>
-  </ng-template>
+  </ng-template> -->
   <ng-template pTemplate="header">
     <tr>
       <th style="width: 20rem;">Name</th>
