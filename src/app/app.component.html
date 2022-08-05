@@ -1,5 +1,5 @@
 <div class="d-flex flex-row align-items-center">
-  <img class="ms-4" height="60"  src="../assets/Logo.png" alt="">
+  <img class="ms-4" height="60" src="../assets/Logo.png" alt="">
   <h5>Hobgoblin Army Builder</h5>
 </div>
 
@@ -26,13 +26,20 @@
     <tr>
       <td style="width: 20rem;">
         <div class="fs-2">{{unit.name}}</div>
+        <div class="ms-2">Cost multiplier: x{{unit.costMultiplier}}</div>
         <div class="ms-2" *ngIf="unit.isGeneral"><b>General</b></div>
         <div class="ms-2" *ngIf="unit.hasBattleStandard"><b>Battle Standard</b></div>
 
-       </td>
+      </td>
       <td style="width: 35rem;">
         <ul class="list-group">
-          <li class="list-group-item" style="max-width: 35rem" *ngFor="let s of unit.strength">
+          <li class="list-group-item" style="max-width: 35rem" *ngFor="let s of unit.strength; let i = index">
+            <app-strength-selector [disabledStrength]="unit.strength" [(selectedStrength)]="unit.strength[i]">
+            </app-strength-selector>
+            <small *ngIf="showKeywordDescriptions">{{s?.description}}</small>
+          </li>
+
+          <li class="list-group-item" style="max-width: 35rem" *ngFor="let s of unit.defaultStrength">
             <div>{{s.name}}</div>
             <small *ngIf="showKeywordDescriptions">{{s.description}}</small>
           </li>
@@ -40,7 +47,12 @@
       </td>
       <td style="width: 35rem;">
         <ul class="list-group">
-          <li class="list-group-item" *ngFor="let w of unit.weakness">
+          <li class="list-group-item" *ngFor="let w of unit.weakness; let i = index">
+            <app-weakness-selector [(selectedweakness)]="unit.weakness[i]"></app-weakness-selector>
+            <!-- <div>{{w.name}}</div> -->
+            <small *ngIf="showKeywordDescriptions">{{w?.description}}</small>
+          </li>
+          <li class="list-group-item" style="max-width: 35rem" *ngFor="let w of unit.defaultWeakness">
             <div>{{w.name}}</div>
             <small *ngIf="showKeywordDescriptions">{{w.description}}</small>
           </li>
@@ -62,7 +74,8 @@
 
 
 <div class="m-2">
-  <app-army-selector [generalEnabled]="!generalAssigned()" [battleStandardEnabled]="!battleStandardAssigned()" (onAddUnit)="addUnit($event)"></app-army-selector>
+  <app-army-selector [generalEnabled]="!generalAssigned()" [battleStandardEnabled]="!battleStandardAssigned()"
+    (onAddUnit)="addUnit($event)"></app-army-selector>
 </div>
 
 <router-outlet></router-outlet>

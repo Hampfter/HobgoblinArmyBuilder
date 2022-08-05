@@ -21,7 +21,7 @@ export class StrengthSelectorComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
 
     this.strength.forEach((item) => {
-      if (this.disabledStrength.find(ds => ds.name === item.name)) {
+      if (this.disabledStrength.filter(s =>  s).find(ds => ds.name === item.name)) {
         item.disabled = true;
       } else {
         item.disabled = false;

@@ -1,4 +1,4 @@
-<p-dropdown appendTo="body" styleClass="w-100" placeholder="Select a weakness" [options]="weakness" [(ngModel)]="selectedweakness" optionLabel="name" (onChange)="weaknessSelected()" [showClear]="true">
+<p-dropdown appendTo="body" styleClass="w-100" placeholder="Select a weakness" optionDisabled="disabled" [options]="weakness" [(ngModel)]="selectedweakness" optionLabel="name" (onChange)="weaknessSelected()" [showClear]="true">
 
   <ng-template pTemplate="selectedItem">
     <div class="d-flex flex-row justify-content-between w-100">

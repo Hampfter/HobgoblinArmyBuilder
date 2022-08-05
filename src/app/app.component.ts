@@ -14,8 +14,8 @@ export class AppComponent {
   army: { units: Unit[], name: string } = { units: [], name: 'Hobgoblin Army' };
 
   addUnit(unit: any) {
-    unit.strength = unit.defaultStrength.concat(unit.strength);
-    unit.weakness = unit.defaultWeakness.concat(unit.weakness);
+    // unit.strength = unit.defaultStrength.concat(unit.strength);
+    // unit.weakness = unit.defaultWeakness.concat(unit.weakness);
     this.army.units.push(unit);
   }
 

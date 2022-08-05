@@ -58,11 +58,9 @@
 
     </div>
     <div class="col-3">
-
       <div class="d-flex flex-column" *ngIf="selectedUnit?.name">
-        <app-weakness-selector [(selectedweakness)]="selectedUnit.weakness[0]"></app-weakness-selector>
-        <app-weakness-selector [(selectedweakness)]="selectedUnit.weakness[1]"></app-weakness-selector>
-        <app-weakness-selector [(selectedweakness)]="selectedUnit.weakness[2]"></app-weakness-selector>
+        <app-weakness-selector [disabledWeakness]="selectedUnit.weakness" [(selectedweakness)]="selectedUnit.weakness[0]"></app-weakness-selector>
+        <app-weakness-selector [disabledWeakness]="selectedUnit.weakness" [(selectedweakness)]="selectedUnit.weakness[1]"></app-weakness-selector>
       </div>
       <div *ngIf="selectedUnit?.defaultWeakness?.length > 0">
         <b>Default weakness</b>
