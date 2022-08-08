@@ -1,6 +1,6 @@
 <div class="p-4" style="border: 1px solid lightgrey;">
   <div class="row">
-    <div class="col-4 col-lg-4 col-md-12 col-sm-12 pt-4">
+    <div class="col-4 col-md-4 col-sm-12 pt-4">
       <p-dropdown styleClass="w-100" placeholder="Select a Unit" [options]="units" [(ngModel)]="selectedUnit"
         optionLabel="name" (onChange)="unitSelected()">
         <ng-template pTemplate="selectedItem">
@@ -41,7 +41,7 @@
       </div>
 
     </div>
-    <div class="col-3 col-lg-3 col-md-12 col-sm-12 pt-4">
+    <div class="col-3 col-md-3 col-sm-12 pt-4">
       <div class="d-flex flex-column" *ngIf="selectedUnit?.name">
         <app-strength-selector class="my-1" [disabledStrength]="selectedUnit.strength"
           [(selectedStrength)]="selectedUnit.strength[0]"></app-strength-selector>
@@ -64,7 +64,7 @@
 
 
     </div>
-    <div class="col-3 col-lg-3 col-md-12 col-sm-12 pt-4">
+    <div class="col-3 col-md-3 col-sm-12 pt-4">
       <div class="d-flex flex-column" *ngIf="selectedUnit?.name">
         <app-weakness-selector class="my-1" [disabledWeakness]="selectedUnit.weakness"
           [(selectedweakness)]="selectedUnit.weakness[0]"></app-weakness-selector>
@@ -82,7 +82,7 @@
         </ul>
       </div>
     </div>
-    <div class="col-2 col-lg-2 col-md-12 col-sm-12 pt-4">
+    <div class="col-2 col-md-2 col-sm-12 pt-4">
 
       <div *ngIf="selectedUnit?.name" class="d-flex flex-column justify-content-between h-100">
         <span>Total cost: <b>{{getTotalCost()}}</b></span>
